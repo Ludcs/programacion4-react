@@ -1,5 +1,6 @@
 import "./App.css";
 import Producto from "../ejercicios-basicos/Ej1";
+import Contador from "../ejercicios-basicos/Ej2";
 
 const productos = [
   { nombre: "Teclado", precio: 45000, stock: 12 },
@@ -15,13 +16,19 @@ function App() {
           React Desde Cero
         </h1>
         <h1 className="text-2xl font-bold mb-4">
-          Ejercicio 1: Listado de productos
+          Ejercicio 1: Tarjetas de Productos
         </h1>
-        <div className="flex justify-start items-center gap-6">
+        <div className="flex justify-start items-center gap-6 mb-4">
           {productos.map((producto) => (
             <Producto key={producto.nombre} {...producto} />
           ))}
         </div>
+        <h1 className="text-2xl font-bold mb-4">
+          Ejercicio 2: Contador con Límites
+        </h1>
+        <>
+        <Contador />
+        </>
       </main>
     </>
   );
