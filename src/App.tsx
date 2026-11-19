@@ -2,6 +2,7 @@ import "./App.css";
 import Producto from "../ejercicios-basicos/Ej1";
 import Contador from "../ejercicios-basicos/Ej2";
 import MostrarYOcultar from "../ejercicios-basicos/Ej3";
+import ConversorTemperatura from "../ejercicios-basicos/Ej4";
 
 const productos = [
   { nombre: "Teclado", precio: 45000, stock: 12 },
@@ -36,8 +37,11 @@ function App() {
         <div className="mb-4">
         <MostrarYOcultar />
         </div>
-        
-          
+        <h1 className="text-2xl font-bold mb-4">
+          Ejercicio 4: Conversor de Temperatura
+        </h1>
+        <div className="mb-4"></div>
+          <ConversorTemperatura />
       </main>
     </>
   );
