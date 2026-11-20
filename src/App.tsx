@@ -5,9 +5,10 @@ import MostrarYOcultar from "../ejercicios-basicos/Ej3";
 import ConversorTemperatura from "../ejercicios-basicos/Ej4";
 import ListaCompras from "../ejercicios-basicos/Ej5";
 import Buscador from "../ejercicios-basicos/Ej6";
+import ProductoTS from "../ejercicios-basicos/Ej7";
 
 const productos = [
-  { nombre: "Teclado", precio: 45000, stock: 12 },
+  { nombre: "Teclado", oferta: true, precio: 45000, stock: 12 },
   { nombre: "Mouse", precio: 18000, stock: 0 },
   { nombre: "Monitor", precio: 320000, stock: 3 },
 ];
@@ -56,6 +57,14 @@ function App() {
         </h1>
         <div className="mb-4">
           <Buscador />
+        </div>
+        <h1 className="text-2xl font-bold mb-4">
+          Ejercicio 7: Tipar con TypeScript 
+        </h1>
+        <div className="flex justify-start items-center gap-6 mb-4">
+          {productos.map((producto) => (
+            <ProductoTS key={producto.nombre} {...producto} />
+          ))}
         </div>
       </main>
     </>
