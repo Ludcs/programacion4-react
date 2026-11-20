@@ -9,6 +9,7 @@ import ProductoTS from "../ejercicios-basicos/Ej7";
 import Login from "../frontend-endpoints/practica1/Login";
 import CargandoYErrores from "../frontend-endpoints/practica2/CargandoYErrores";
 import BuscarPorNombre from "../frontend-endpoints/practica3/BuscarPorNombre";
+import MostrarRoles from "../frontend-endpoints/practica4/MostrarRoles";
 
 const productos = [
   { nombre: "Teclado", oferta: true, precio: 45000, stock: 12 },
@@ -90,6 +91,12 @@ function App() {
           Práctica 3: Buscar por nombre
         </h1>
         <BuscarPorNombre />
+        </div>
+        <div className="py-8">
+          <h1 className="text-2xl font-bold mb-4">
+          Práctica 4: Mostrar roles
+        </h1>
+        <MostrarRoles />
         </div>
         </section>
       </main>
