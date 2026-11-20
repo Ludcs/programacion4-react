@@ -60,22 +60,6 @@ export default function UserList({ token }: { token: string }) {
     fetchUsers();
   }, [token]);
   
-//   useEffect(() => {
-//     fetch(`${import.meta.env.VITE_API_URL}/user`, { //para simular el error, cambiar la URL a /usr
-//       headers: { Authorization: `Bearer ${token}` },
-//     })
-//       .then(async (respuesta) => {
-//         const data = await respuesta.json();
-//         if (!respuesta.ok) {
-//           setError(data.detail);
-//           return;
-//         }
-//         setUsers(data);
-//       })
-//       .finally(() => {
-//         setLoading(false);
-//       });
-//   }, [token]);
 
   useEffect(() => {
     if (selectedUserId === null) return;
