@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { SubmitEvent } from "react";
-import UserList from "../UserList";
+import UserList from "./UserList";
 
 export default function CargandoYErrores() {
   const [email, setEmail] = useState("");

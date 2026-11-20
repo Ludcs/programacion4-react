@@ -32,20 +32,18 @@ export default function UserList({ token }: { token: string }) {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // setLoading(true);
-    // setError(null);
-
-    fetch(`${import.meta.env.VITE_API_URL}/usr`, {
+    fetch(`${import.meta.env.VITE_API_URL}/user`, { //para simular el error, cambiar la URL a /usr
       headers: { Authorization: `Bearer ${token}` },
-    }).then(async (respuesta) => {
-      const data = await respuesta.json();
-      if (!respuesta.ok) {
-        setError(data.detail); 
-        return;
-      }
-      setUsers(data); 
     })
-    .finally(() => {
+      .then(async (respuesta) => {
+        const data = await respuesta.json();
+        if (!respuesta.ok) {
+          setError(data.detail);
+          return;
+        }
+        setUsers(data);
+      })
+      .finally(() => {
         setLoading(false);
       });
   }, [token]);
@@ -55,15 +53,14 @@ export default function UserList({ token }: { token: string }) {
 
     fetch(`${import.meta.env.VITE_API_URL}/user/${selectedUserId}`, {
       headers: { Authorization: `Bearer ${token}` },
-    })
-      .then(async (respuesta) => {
-        const data = await respuesta.json();
-        if (!respuesta.ok) {
-          setError(data.detail);
-          return;
-        }
-        setSelectedUser(data);
-      })
+    }).then(async (respuesta) => {
+      const data = await respuesta.json();
+      if (!respuesta.ok) {
+        setError(data.detail);
+        return;
+      }
+      setSelectedUser(data);
+    });
   }, [selectedUserId, token]);
 
   if (loading) return <p>Cargando...</p>;
