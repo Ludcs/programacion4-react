@@ -28,20 +28,26 @@ export default function UserList({ token }: { token: string }) {
   const [users, setUsers] = useState<User[]>([]);
   const [selectedUserId, setSelectedUserId] = useState<number | null>(null);
   const [selectedUser, setSelectedUser] = useState<UserDetail | null>(null);
-//   const [loadingDetail, setLoadingDetail] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/user`, {
+    // setLoading(true);
+    // setError(null);
+
+    fetch(`${import.meta.env.VITE_API_URL}/usr`, {
       headers: { Authorization: `Bearer ${token}` },
     }).then(async (respuesta) => {
       const data = await respuesta.json();
       if (!respuesta.ok) {
-        setError(data.detail); // 401, 403…: viene un objeto { detail }
+        setError(data.detail); 
         return;
       }
-      setUsers(data); // 200: recién acá es una lista
-    });
+      setUsers(data); 
+    })
+    .finally(() => {
+        setLoading(false);
+      });
   }, [token]);
 
   useEffect(() => {
@@ -60,6 +66,7 @@ export default function UserList({ token }: { token: string }) {
       })
   }, [selectedUserId, token]);
 
+  if (loading) return <p>Cargando...</p>;
   if (error) return <p>{error}</p>;
 
   return (

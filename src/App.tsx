@@ -7,6 +7,7 @@ import ListaCompras from "../ejercicios-basicos/Ej5";
 import Buscador from "../ejercicios-basicos/Ej6";
 import ProductoTS from "../ejercicios-basicos/Ej7";
 import Login from "../frontend-endpoints/practica1/Login";
+import CargandoYErrores from "../frontend-endpoints/practica2/CargandoYErrores";
 
 const productos = [
   { nombre: "Teclado", oferta: true, precio: 45000, stock: 12 },
@@ -77,6 +78,12 @@ function App() {
           Práctica 1: Ver el detalle de un usuario
         </h1>
         <Login />
+        <div className="py-8">
+          <h1 className="text-2xl font-bold mb-4">
+          Práctica 2: Cargando y errores
+        </h1>
+        <CargandoYErrores />
+        </div>
         </section>
       </main>
     </>
