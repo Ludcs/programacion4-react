@@ -4,6 +4,7 @@ import Contador from "../ejercicios-basicos/Ej2";
 import MostrarYOcultar from "../ejercicios-basicos/Ej3";
 import ConversorTemperatura from "../ejercicios-basicos/Ej4";
 import ListaCompras from "../ejercicios-basicos/Ej5";
+import Buscador from "../ejercicios-basicos/Ej6";
 
 const productos = [
   { nombre: "Teclado", precio: 45000, stock: 12 },
@@ -49,7 +50,13 @@ function App() {
         </h1>
         <div className="mb-4">
           <ListaCompras />
-        </div>        
+        </div>
+        <h1 className="text-2xl font-bold mb-4">
+          Ejercicio 6: Buscador
+        </h1>
+        <div className="mb-4">
+          <Buscador />
+        </div>
       </main>
     </>
   );
