@@ -6,6 +6,7 @@ import ConversorTemperatura from "../ejercicios-basicos/Ej4";
 import ListaCompras from "../ejercicios-basicos/Ej5";
 import Buscador from "../ejercicios-basicos/Ej6";
 import ProductoTS from "../ejercicios-basicos/Ej7";
+import Login from "../frontend-endpoints/practica1/Login";
 
 const productos = [
   { nombre: "Teclado", oferta: true, precio: 45000, stock: 12 },
@@ -17,6 +18,7 @@ function App() {
   return (
     <>
       <main className="min-h-screen container mx-auto px-4 py-8">
+        {/* React Desde Cero */}
         <h1 className="text-3xl text-center font-bold mb-4">
           React Desde Cero
         </h1>
@@ -66,6 +68,16 @@ function App() {
             <ProductoTS key={producto.nombre} {...producto} />
           ))}
         </div>
+        {/* Practica BK Endpoints */}
+        <section className="py-8">
+          <h1 className="text-3xl text-center font-bold mb-4">
+          Practica BK Endpoints
+        </h1>
+        <h1 className="text-2xl font-bold mb-4">
+          Práctica 1: Ver el detalle de un usuario
+        </h1>
+        <Login />
+        </section>
       </main>
     </>
   );
