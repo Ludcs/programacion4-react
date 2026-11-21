@@ -13,6 +13,7 @@ import MostrarRoles from "../frontend-endpoints/practica4/MostrarRoles";
 import AltaUsuario from "../frontend-endpoints/practica5/AltaUsuario";
 import SoloMayores from "../frontend-endpoints/practica6/SoloMayores";
 import BorrarUsuario from "../frontend-endpoints/practica7/BorrarUsuario";
+import SesionVencida from "../frontend-endpoints/practica8/SesionVencida";
 
 const productos = [
   { nombre: "Teclado", oferta: true, precio: 45000, stock: 12 },
@@ -118,6 +119,12 @@ function App() {
           Práctica 7: Borrar Usuario
         </h1>
         <BorrarUsuario />
+        </div>
+        <div className="py-8">
+          <h1 className="text-2xl font-bold mb-4">
+          Práctica 8: Sesion Vencida
+        </h1>
+        <SesionVencida />
         </div>
         </section>
       </main>
